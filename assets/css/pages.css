@@ -1,0 +1,22 @@
+/* Mobile Auth Visibility */
+.mobile-auth {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .nav-links.active .mobile-auth {
+    display: block !important;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-top: 1px solid var(--border-color);
+    width: 80%;
+    margin-top: 10px;
+  }
+}
+
+/* Specific component tweaks inside index.html */
+.upcoming-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: var(--shadow-lg);
+}

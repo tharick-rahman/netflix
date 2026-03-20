@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineStream | Movies</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+     <a href="index.html" class="nav-brand">
+      <img src="assets/images/stack logo.png" alt="logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="movies.html" class="active">Movies</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="nav-item-desktop">Login</a>
+      <a href="signup.html" class="btn btn-primary nav-item-desktop">Sign Up</a>
+      <a href="login.html" class="mobile-auth">Login</a>
+      <a href="signup.html" class="mobile-auth" style="color: var(--primary-color);">Sign Up</a>
+      <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+    </div>
+    <div class="flex items-center">
+      <button class="theme-toggle desktop-theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div style="padding-top: 100px; text-align: center; background: var(--bg-secondary); padding-bottom: 2rem;">
+    <h1 class="reveal">Movies Library</h1>
+    <p class="reveal" style="color: var(--text-secondary);">Browse our extensive collection of films</p>
+  </div>
+
+  <!-- 1. Filters & Search Section -->
+  <section class="section">
+    <div class="container reveal">
+      <div class="flex flex-col md:flex-row gap-md" style="flex-wrap: wrap; justify-content: space-between; align-items: center; background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius-md);">
+        <div class="flex items-center gap-sm" style="flex: 1; min-width: 300px; background: var(--bg-color); padding: 0.5rem 1rem; border-radius: var(--radius-full); border: 1px solid var(--border-color);">
+          <i class="fas fa-search" style="color: var(--text-muted);"></i>
+          <input type="text" placeholder="Search movies, genres, actors..." style="border: none; background: transparent; color: var(--text-primary); width: 100%;">
+        </div>
+        <div class="flex items-center gap-sm" style="flex-wrap: wrap;">
+          <select style="padding: 0.5rem 1rem; background: var(--bg-color); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            <option>All Genres</option>
+            <option>Action</option>
+            <option>Comedy</option>
+            <option>Drama</option>
+          </select>
+          <select style="padding: 0.5rem 1rem; background: var(--bg-color); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm);">
+            <option>Latest Release</option>
+            <option>Popularity</option>
+            <option>Alphabetical</option>
+          </select>
+          <button class="btn btn-primary"><i class="fas fa-filter"></i> Apply</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Action Category Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="reveal">High-Octane Action</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Action 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Action 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1535443274868-756b0f070b6e?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Action 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1568876694728-451bbf694b83?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Action 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Action 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Adventure Category Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Epic Adventures</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Adv 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1627873649417-c67f701f1949?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Adv 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Adv 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Adv 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Adv 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Sci-Fi Category Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="reveal">Sci-Fi & Cyberpunk</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>SciFi 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>SciFi 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>SciFi 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>SciFi 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>SciFi 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Horror Category Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Horror & Thrillers</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="assets/images/classic.webp" alt="Movie"><div class="overlay"><p><strong>Horror 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="assets/images/echnoeee.webp" alt="Movie"><div class="overlay"><p><strong>Horror 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Horror 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Horror 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Horror 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Rom-Com Category Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="reveal">Romantic Comedies</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1496337589254-7e19d01cec44?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>RomCom 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>RomCom 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>RomCom 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>RomCom 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1616530940355-351fabd9524b?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>RomCom 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Fantasy Category Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Fantasy Worlds</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="assets/images/silent.avif" alt="Movie"><div class="overlay"><p><strong>Fantasy 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Fantasy 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Fantasy 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Fantasy 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1627873649417-c67f701f1949?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Fantasy 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Classic Movies Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <h2 class="reveal">Timeless Classics</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=600&auto=format&fit=crop" alt="Movie" style="filter: grayscale(100%);"><div class="overlay"><p><strong>Classic 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="assets/images/classic.webp" alt="Movie" style="filter: grayscale(100%);"><div class="overlay"><p><strong>Classic 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="assets/images/echnoeee.webp" alt="Movie" style="filter: grayscale(100%);"><div class="overlay"><p><strong>Classic 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1580130601254-05fa235abeab?q=80&w=600&auto=format&fit=crop" alt="Movie" style="filter: grayscale(100%);"><div class="overlay"><p><strong>Classic 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1594908900066-3f47337549d8?q=80&w=600&auto=format&fit=crop" alt="Movie" style="filter: grayscale(100%);"><div class="overlay"><p><strong>Classic 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Award Winning Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal">Award Winning</h2>
+      <div class="slider-container reveal">
+        <div class="slider-row no-scrollbar">
+          <div class="movie-card"><img src="assets/images/silent.avif" alt="Movie"><div class="overlay"><p><strong>Award 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Award 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Award 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Award 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          <div class="movie-card"><img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=600&auto=format&fit=crop" alt="Movie"><div class="overlay"><p><strong>Award 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Regional Content Section -->
+  <section class="section" style="background-color: var(--bg-secondary);">
+    <div class="container reveal text-center" style="text-align: center;">
+      <h2 style="font-size: 2rem;">Discover Regional Cinema</h2>
+      <p style="margin-bottom: 2rem; color: var(--text-secondary);">Explore masterful storytelling from around the globe in multiple languages.</p>
+      <div class="flex gap-md justify-center" style="flex-wrap: wrap;">
+        <button class="btn btn-outline" style="min-width: 150px;">European</button>
+        <button class="btn btn-outline" style="min-width: 150px;">Asian Cinema</button>
+        <button class="btn btn-outline" style="min-width: 150px;">Latin American</button>
+        <button class="btn btn-outline" style="min-width: 150px;">African</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shared Footer -->
+    <!-- FOOTER -->
+     
+  <footer class="footer" style="background-color: #111; padding: 4rem 4% 2rem; border-top: 1px solid #333;">
+    <div class="container reveal">
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-bottom: 3rem;">
+        
+        <div style="flex: 1; min-width: 250px;">
+           <a href="index.html" class="nav-brand">
+      <img src="assets/images/stack logo.png" alt="logo">
+    </a>
+          <p style="color: #aaa; margin-bottom: 1.5rem; line-height: 1.6;">Your premium destination for the best movies, TV shows, and exclusive originals. Stream seamlessly anywhere, anytime.</p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-twitter"></i></a>
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px;">
+          <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.8rem;"><a href="index.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Home</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="movies.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Movies</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="services.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Services</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="about.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">About Us</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px;">
+          <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Support</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.8rem;"><a href="contact.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Help Center</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="404.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Terms of Service</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="404.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="404.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Cookie Preferences</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1.5; min-width: 300px;">
+          <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Newsletter</h4>
+          <p style="color: #aaa; margin-bottom: 1rem;">Join our newsletter to get updates on new releases and features.</p>
+          <form style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter your email" style="flex: 1; padding: 0.8rem 1rem; border: none; border-radius: 4px; background: #222; color: #fff; outline: none;">
+            <button type="button" class="btn btn-primary" style="padding: 0.8rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div style="text-align: center; border-top: 1px solid #333; padding-top: 2rem; color: #777; font-size: 0.9rem;">
+        <p>&copy; 2026 CineStream. Designed dynamically for the best experience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

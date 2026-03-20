@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineStream | Sign Up</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Multi-step form styles */
+    .step {
+      display: none;
+      animation: fadeIn 0.4s;
+    }
+    .step.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .auth-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--bg-tertiary);
+      padding: 3rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xl);
+    }
+    .auth-input {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      border-radius: var(--radius-sm);
+    }
+    .plan-card {
+      border: 2px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .plan-card.selected {
+      border-color: var(--primary-color);
+      background: rgba(229, 9, 20, 0.1);
+    }
+    .genre-pill {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border: 1px solid var(--text-muted);
+      border-radius: var(--radius-full);
+      margin: 0.25rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .genre-pill.selected {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      color: white;
+    }
+  </style>
+</head>
+<body style="background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=2000&auto=format&fit=crop') center/cover; background-attachment: fixed;">
+
+  <!-- NAVBAR Minimal for Signup -->
+  <nav class="navbar" style="background: transparent;">
+         <a href="index.html" class="nav-brand">
+      <img src="assets/images/stack logo.png" alt="logo">
+    </a>
+    <a href="login.html" style="font-weight: bold; font-size: 1.1rem;">Sign In</a>
+  </nav>
+
+  <section class="section" style="padding-top: 100px; min-height: 90vh;">
+    <div class="container">
+      <div class="auth-container">
+        
+        <!-- STEP 1: Account Creation Form -->
+        <div class="step active" id="step-1">
+          <p style="color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 0.5rem;">Step 1 of 4</p>
+          <h2 style="margin-bottom: 2rem;">Create your account</h2>
+          <p style="margin-bottom: 2rem;">No commitments, cancel anytime.</p>
+          <input type="email" class="auth-input" placeholder="Email address" required>
+          <input type="password" class="auth-input" placeholder="Create a password" required>
+          <input type="password" class="auth-input" placeholder="Confirm password" required>
+          <button class="btn btn-primary next-btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;" data-next="step-2">Next <i class="fas fa-chevron-right" style="margin-left:5px;"></i></button>
+        </div>
+
+        <!-- STEP 2: Plan Selection -->
+        <div class="step" id="step-2">
+          <p style="color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 0.5rem;">Step 2 of 4</p>
+          <h2 style="margin-bottom: 2rem;">Choose your plan</h2>
+          
+          <div class="plan-card" onclick="selectPlan(this)">
+            <div>
+              <h3>Basic</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">720p • 1 Screen • With Ads</p>
+            </div>
+            <div style="font-size: 1.5rem; font-weight: bold;">$8.99 <span style="font-size: 0.8rem; font-weight: normal;">/mo</span></div>
+          </div>
+          
+          <div class="plan-card selected" onclick="selectPlan(this)">
+            <div>
+              <h3>Standard <span style="background: var(--primary-color); padding: 2px 5px; border-radius: 3px; font-size: 0.6rem; color: white; display: inline-block; vertical-align: top; margin-left: 5px;">POPULAR</span></h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">1080p • 2 Screens • Ad-free</p>
+            </div>
+            <div style="font-size: 1.5rem; font-weight: bold;">$13.99 <span style="font-size: 0.8rem; font-weight: normal;">/mo</span></div>
+          </div>
+          
+          <div class="plan-card" onclick="selectPlan(this)">
+            <div>
+              <h3>Premium</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">4K+HDR • 4 Screens • Ad-free</p>
+            </div>
+            <div style="font-size: 1.5rem; font-weight: bold;">$19.99 <span style="font-size: 0.8rem; font-weight: normal;">/mo</span></div>
+          </div>
+
+          <div class="flex gap-sm" style="margin-top: 2rem;">
+            <button class="btn btn-outline next-btn" style="flex: 1; padding: 1rem;" data-next="step-1">Back</button>
+            <button class="btn btn-primary next-btn" style="flex: 2; padding: 1rem; font-size: 1.1rem;" data-next="step-3">Next <i class="fas fa-chevron-right" style="margin-left:5px;"></i></button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Payment Setup & Policies -->
+        <div class="step" id="step-3">
+          <p style="color: var(--text-secondary); text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 0.5rem;">Step 3 of 4</p>
+          <h2 style="margin-bottom: 2rem;">Set up your payment</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Your membership starts as soon as you set up payment.</p>
+          
+          <div style="background: var(--bg-color); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-weight: bold;">Credit or Debit Card</span>
+            <div style="display: flex; gap: 10px; color: var(--text-secondary); font-size: 1.5rem;">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-amex"></i>
+            </div>
+          </div>
+
+          <input type="text" class="auth-input" placeholder="Card number" style="margin-bottom: 1rem;">
+          <div class="flex gap-md">
+            <input type="text" class="auth-input" placeholder="Expiration date (MM/YY)" style="flex: 1;">
+            <input type="text" class="auth-input" placeholder="CVV" style="flex: 1;">
+          </div>
+          <input type="text" class="auth-input" placeholder="Name on card">
+
+          <!-- Multiple T&C / Policies checkboxes -->
+          <div style="background: var(--bg-color); padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 2rem; font-size: 0.9rem;">
+            <label style="display: flex; gap: 10px; margin-bottom: 1rem; cursor: pointer;">
+              <input type="checkbox" style="margin-top: 3px;" required>
+              <span>I agree to the <a href="#" style="color: var(--primary-color);">Terms of Use</a>.</span>
+            </label>
+            <label style="display: flex; gap: 10px; margin-bottom: 1rem; cursor: pointer;">
+              <input type="checkbox" style="margin-top: 3px;" required>
+              <span>I have read the <a href="#" style="color: var(--primary-color);">Privacy Policy</a>.</span>
+            </label>
+            <label style="display: flex; gap: 10px; cursor: pointer;">
+              <input type="checkbox" style="margin-top: 3px;">
+              <span>Please send me special offers and newsletter updates.</span>
+            </label>
+          </div>
+
+          <div class="flex gap-sm">
+            <button class="btn btn-outline next-btn" style="flex: 1; padding: 1rem;" data-next="step-2">Back</button>
+            <button class="btn btn-primary next-btn" style="flex: 2; padding: 1rem; font-size: 1.1rem;" data-next="step-4">Start Membership</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Profile / Preferences Setup & Confirmation -->
+        <div class="step" id="step-4">
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <i class="fas fa-check-circle" style="font-size: 4rem; color: #1DB954; margin-bottom: 1rem;"></i>
+            <h2>Welcome to CineStream!</h2>
+            <p style="color: var(--text-secondary);">Your account is active. Let's personalize your experience.</p>
+          </div>
+          
+          <h3 style="margin-bottom: 1rem;">Select your favorite genres</h3>
+          <div style="margin-bottom: 2rem; display: flex; flex-wrap: wrap;">
+            <span class="genre-pill" onclick="this.classList.toggle('selected')">Action</span>
+            <span class="genre-pill" onclick="this.classList.toggle('selected')">Comedy</span>
+            <span class="genre-pill selected" onclick="this.classList.toggle('selected')">Sci-Fi</span>
+            <span class="genre-pill" onclick="this.classList.toggle('selected')">Romance</span>
+            <span class="genre-pill" onclick="this.classList.toggle('selected')">Horror</span>
+            <span class="genre-pill selected" onclick="this.classList.toggle('selected')">Thrillers</span>
+            <span class="genre-pill" onclick="this.classList.toggle('selected')">Documentary</span>
+            <span class="genre-pill" onclick="this.classList.toggle('selected')">Anime</span>
+          </div>
+
+          <h3 style="margin-bottom: 1rem;">Profile Maturity Setting</h3>
+          <select style="width: 100%; padding: 1rem; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); margin-bottom: 2rem;">
+            <option>All Maturity Levels (Adult)</option>
+            <option>Teens and below (TV-14)</option>
+            <option>Kids Only (TV-Y7)</option>
+          </select>
+
+          <a href="login.html" class="btn btn-primary" style="width: 100%; padding: 1rem; text-align: center; display: block; font-size: 1.1rem;">Finish and Start Watching</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Plan Selection UX
+    function selectPlan(element) {
+      document.querySelectorAll('.plan-card').forEach(card => card.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    // Step navigation
+    document.querySelectorAll('.next-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const nextStepId = btn.getAttribute('data-next');
+        document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+        document.getElementById(nextStepId).classList.add('active');
+        window.scrollTo(0, 0);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineStream | Dashboard & Login</title>
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Styling for the login state toggling */
+    .dashboard-view { display: none; }
+    .auth-view { display: block; }
+    
+    /* When "logged in" toggle classes via JS */
+    body.logged-in .dashboard-view { display: block; }
+    body.logged-in .auth-view { display: none; }
+
+    .auth-container {
+      max-width: 450px;
+      margin: 0 auto;
+      background: var(--bg-tertiary);
+      padding: 3rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .auth-input {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      border-radius: var(--radius-sm);
+    }
+  </style>
+</head>
+<!-- Initial state is logged out, will be switched by a demo script -->
+<body class="auth-view">
+  
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+     <a href="index.html" class="nav-brand">
+      <img src="assets/images/stack logo.png" alt="logo">
+    </a>
+    
+    <!-- Auth View Links -->
+    <div class="nav-links auth-view">
+      <a href="index.html">Home</a>
+    </div>
+
+    <!-- Dashboard View Links -->
+    <div class="nav-links dashboard-view">
+      <a href="index.html">Home</a>
+  
+      
+      <a href="index.html" id="logout-btn" style="color: var(--primary-color);">Logout</a>
+    </div>
+
+    <div class="flex items-center">
+      <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+      <button class="theme-toggle desktop-theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- =============================== -->
+  <!-- 1. AUTHENTICATION VIEW (Logged Out) -->
+  <!-- =============================== -->
+  <section class="section auth-view" style="padding-top: 150px; min-height: 100vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=2000&auto=format&fit=crop') center/cover;">
+    <div class="container reveal">
+      <div class="auth-container">
+        <h1 style="margin-bottom: 2rem;">Sign In</h1>
+        <form id="login-form">
+          <input type="email" class="auth-input" placeholder="Email or phone number" required value="demo@cinestream.com">
+          <input type="password" class="auth-input" placeholder="Password" required value="password123">
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">Sign In</button>
+          
+          <div class="flex justify-between" style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+            <label><input type="checkbox" checked> Remember me</label>
+            <a href="#">Need help?</a>
+          </div>
+        </form>
+        
+        <div style="margin-top: 4rem; color: var(--text-secondary);">
+          <p>New to CineStream? <a href="signup.html" style="color: #fff; font-weight: bold;">Sign up now.</a></p>
+          <p style="font-size: 0.8rem; margin-top: 1rem;">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================== -->
+  <!-- DASHBOARD VIEW (Logged In) -->
+  <!-- =============================== -->
+  <div class="dashboard-view" style="padding-top: 100px;">
+    
+    <!-- 2. Welcome Header & Profile -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+      <div class="container">
+        <div class="flex items-center gap-md">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop" alt="Profile" style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 2px solid var(--primary-color);">
+          <div>
+            <h1 style="margin-bottom: 0;">Welcome back, Alex!</h1>
+            <p style="color: var(--text-secondary);">Premium Member • 3 Profiles Active</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Resume Watching -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <h2>Resume Watching</h2>
+        <div class="flex gap-md" style="flex-wrap: wrap;">
+          <!-- Custom Resume Cards -->
+          <div style="flex: 1; min-width: 300px; background: var(--bg-secondary); border-radius: var(--radius-md); overflow: hidden; position: relative;">
+            <img src="assets/images/classic.webp" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+              <h3 style="margin-bottom: 0.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">The Director's Cut</h3>
+              <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px;">
+                <div style="width: 65%; height: 100%; background: var(--primary-color); border-radius: 2px;"></div>
+              </div>
+              <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #ccc;">S2:E4 left at 45:12</p>
+            </div>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.6); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 2px solid white; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='translate(-50%, -50%) scale(1.1)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          
+          <div style="flex: 1; min-width: 300px; background: var(--bg-secondary); border-radius: var(--radius-md); overflow: hidden; position: relative;">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+              <h3 style="margin-bottom: 0.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Neon Mech</h3>
+              <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px;">
+                <div style="width: 15%; height: 100%; background: var(--primary-color); border-radius: 2px;"></div>
+              </div>
+              <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #ccc;">S1:E1 left at 10:05</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Movies Released / New Additions -->
+    <section class="section" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <h2>Newly Added For You</h2>
+        <div class="slider-container">
+          <div class="slider-row no-scrollbar">
+            <div class="movie-card"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=600&auto=format&fit=crop"><div class="overlay"><p><strong>New Arrival 1</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+            <div class="movie-card"><img src="https://images.unsplash.com/photo-1560109947-543149eceb16?q=80&w=600&auto=format&fit=crop"><div class="overlay"><p><strong>New Arrival 2</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+            <div class="movie-card"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=600&auto=format&fit=crop"><div class="overlay"><p><strong>New Arrival 3</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+            <div class="movie-card"><img src="https://images.unsplash.com/photo-1627873649417-c67f701f1949?q=80&w=600&auto=format&fit=crop"><div class="overlay"><p><strong>New Arrival 4</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+            <div class="movie-card"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=600&auto=format&fit=crop"><div class="overlay"><p><strong>New Arrival 5</strong></p><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Upcoming Releases & 6. My Watchlist -->
+    <section class="section">
+      <div class="container flex flex-col lg:flex-row gap-lg">
+        <div style="flex: 2;">
+          <h2>My Watchlist / Saved</h2>
+          <div class="slider-container">
+            <div class="slider-row no-scrollbar" style="padding-left: 0;">
+              <div class="movie-card" style="height: 250px;"><img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=600&auto=format&fit=crop"><div class="overlay" style="display:flex; flex-direction:column; justify-content:center; align-items:center; background: rgba(0,0,0,0.8);"><i class="fas fa-play fa-2x" style="margin-bottom: 1rem;"></i><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+              <div class="movie-card" style="height: 250px;"><img src="https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?q=80&w=600&auto=format&fit=crop"><div class="overlay" style="display:flex; flex-direction:column; justify-content:center; align-items:center; background: rgba(0,0,0,0.8);"><i class="fas fa-play fa-2x" style="margin-bottom: 1rem;"></i><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+              <div class="movie-card" style="height: 250px;"><img src="assets/images/echnoeee.webp"><div class="overlay" style="display:flex; flex-direction:column; justify-content:center; align-items:center; background: rgba(0,0,0,0.8);"><i class="fas fa-play fa-2x" style="margin-bottom: 1rem;"></i><button onclick="window.location.href='404.html'" class="btn btn-primary watch-now-btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; margin-top: 0.5rem; width: 100%; border-radius: 4px;"><i class="fas fa-play"></i> Watch Now</button></div></div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="flex: 1; background: var(--bg-tertiary); padding: 2rem; border-radius: var(--radius-md);">
+          <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Upcoming (Watchlist)</h2>
+          <ul class="flex-col gap-sm" style="display: flex;">
+            <li class="flex items-center justify-between" style="padding: 1rem; border-bottom: 1px solid var(--border-color);">
+              <div>
+                <strong>Cyber Protocol S2</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Coming Friday</p>
+              </div>
+              <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.8rem;"><i class="fas fa-bell"></i></button>
+            </li>
+            <li class="flex items-center justify-between" style="padding: 1rem; border-bottom: 1px solid var(--border-color);">
+              <div>
+                <strong>The Outpost Movie</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Dec 12th</p>
+              </div>
+              <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.8rem;"><i class="fas fa-bell"></i></button>
+            </li>
+            <li class="flex items-center justify-between" style="padding: 1rem;">
+              <div>
+                <strong>Comedy Special</strong>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Jan 5th</p>
+              </div>
+              <button class="btn btn-outline" style="padding: 0.5rem; font-size: 0.8rem;"><i class="fas fa-bell"></i></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Recently Watched (History) -->
+    <section class="section" style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <h2>Watch History</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Titles you've finished recently.</p>
+        <div class="flex gap-sm" style="flex-wrap: wrap;">
+           <span style="background: var(--bg-color); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.9rem;">The Grand Hotel <i class="fas fa-times" style="margin-left: 10px; opacity: 0.5; cursor:pointer;"></i></span>
+           <span style="background: var(--bg-color); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.9rem;">Documentary: Nature <i class="fas fa-times" style="margin-left: 10px; opacity: 0.5; cursor:pointer;"></i></span>
+           <span style="background: var(--bg-color); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.9rem;">Action Hero 3 <i class="fas fa-times" style="margin-left: 10px; opacity: 0.5; cursor:pointer;"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8, 9, 10. Account / Billing / Security / Downloads Management -->
+    <section class="section">
+      <div class="container">
+        <h2 style="margin-bottom: 2rem;">Account Management</h2>
+        <div class="flex gap-md" style="flex-wrap: wrap;">
+          
+          <div style="flex: 1; min-width: 250px; background: var(--bg-tertiary); padding: 2rem; border-radius: var(--radius-md);">
+            <h3 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-credit-card"></i> Billing Details</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Next charge: <strong>$19.99 on Oct 1st</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Visa ending in 4242</p>
+            <button class="btn btn-outline" style="width: 100%;">Manage Payment</button>
+          </div>
+          
+          <div style="flex: 1; min-width: 250px; background: var(--bg-tertiary); padding: 2rem; border-radius: var(--radius-md);">
+            <h3 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-shield-alt"></i> Security</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Password last changed: <strong>3 months ago</strong></p>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Recent sign in: <strong>Mac OS, California</strong></p>
+            <button class="btn btn-outline" style="width: 100%;">Update Security</button>
+          </div>
+          
+          <div style="flex: 1; min-width: 250px; background: var(--bg-tertiary); padding: 2rem; border-radius: var(--radius-md);">
+            <h3 style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-download"></i> Download Devices</h3>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">Used: <strong>2/4 Allowances</strong></p>
+            <ul style="color: var(--text-secondary); margin-bottom: 1rem; list-style: circle; margin-left: 1rem;">
+              <li>Alex's iPhone 14</li>
+              <li>Living Room iPad</li>
+            </ul>
+            <button class="btn btn-outline" style="width: 100%;">Manage Devices</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div> <!-- End Dashboard View -->
+
+  <!-- Shared Footer -->
+    <!-- FOOTER -->
+  <footer class="footer" style="background-color: #111; padding: 4rem 4% 2rem; border-top: 1px solid #333;">
+    <div class="container reveal">
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-bottom: 3rem;">
+        
+        <div style="flex: 1; min-width: 250px;">
+     <a href="index.html" class="nav-brand">
+      <img src="assets/images/stack logo.png" alt="logo">
+    </a>
+          <p style="color: #aaa; margin-bottom: 1.5rem; line-height: 1.6;">Your premium destination for the best movies, TV shows, and exclusive originals. Stream seamlessly anywhere, anytime.</p>
+          <div style="display: flex; gap: 1rem;">
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-twitter"></i></a>
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-instagram"></i></a>
+            <a href="404.html" style="background: #222; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #fff; transition: all 0.3s;"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px;">
+          <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.8rem;"><a href="index.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Home</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="movies.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Movies</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="services.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Services</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="about.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">About Us</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px;">
+          <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Support</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 0.8rem;"><a href="contact.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Help Center</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="404.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Terms of Service</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="404.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.8rem;"><a href="404.html" style="color: #aaa; text-decoration: none; transition: 0.3s;">Cookie Preferences</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1.5; min-width: 300px;">
+          <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 600;">Newsletter</h4>
+          <p style="color: #aaa; margin-bottom: 1rem;">Join our newsletter to get updates on new releases and features.</p>
+          <form style="display: flex; gap: 0.5rem;">
+            <input type="email" placeholder="Enter your email" style="flex: 1; padding: 0.8rem 1rem; border: none; border-radius: 4px; background: #222; color: #fff; outline: none;">
+            <button type="button" class="btn btn-primary" style="padding: 0.8rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">Subscribe</button>
+          </form>
+        </div>
+        
+      </div>
+      
+      <div style="text-align: center; border-top: 1px solid #333; padding-top: 2rem; color: #777; font-size: 0.9rem;">
+        <p>&copy; 2026 CineStream. Designed dynamically for the best experience.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Demo logic to toggle login view to dashboard
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('login-form');
+      const logoutBtn = document.getElementById('logout-btn');
+      
+      if(loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // Simulate login
+          document.body.classList.remove('auth-view');
+          document.body.classList.add('logged-in');
+          window.scrollTo(0, 0); // scroll to top
+        });
+      }
+      
+      if(logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.body.classList.remove('logged-in');
+          document.body.classList.add('auth-view');
+          window.scrollTo(0, 0);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
