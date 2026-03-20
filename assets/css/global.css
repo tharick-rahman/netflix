@@ -113,3 +113,46 @@ h3 { font-size: 1.5rem; }
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ===== PREVENT CONTENT HIDING UNDER NAVBAR ===== */
+body {
+  padding-top: 80px; /* adjust if your navbar height differs */
+}
+
+/* ===== REMOVE RIGHT SIDE SCROLL (MOBILE BUG) ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===== GLOBAL FIXES ===== */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ===== FLEX FIX ===== */
+.flex {
+  flex-wrap: wrap;
+}
+
+/* ===== IMAGE FIX ===== *
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+}
